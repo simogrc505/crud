@@ -1,0 +1,24 @@
+{
+  "db": {
+    "host": "mongodb://db:27017/app",
+    "options": {
+      "useNewUrlParser": true,
+      "useFindAndModify": false,
+      "autoIndex": false,
+      "useUnifiedTopology": true
+    }
+  },
+  "log": {
+    "name": "app",
+    "base": {
+      "region": "local",
+      "env": "development"
+    },
+    "enabled": false,
+    "redact": [
+      "req.headers.authorization"
+    ]
+  },
+  "host_name": "HOSTNAME"
+}
+

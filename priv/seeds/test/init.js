@@ -1,0 +1,18 @@
+/* eslint-disable prefer-promise-reject-errors */
+const mongoose = require('mongoose')
+const config = require('config')
+
+const books = require('./book')
+
+mongoose.connect(config.db.host, config.db.options)
+books.seed()
+  .then(() => console.log("OKI"))
+  .catch((err) => {
+    if (err) {
+      throw err
+    }
+    console.log(err)
+  })
+  .finally(() => {
+    mongoose.disconnect()
+  })
