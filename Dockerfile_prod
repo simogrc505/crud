@@ -1,0 +1,14 @@
+FROM node:12-alpine
+
+WORKDIR /code
+
+RUN apk add git
+
+ADD package.json .
+RUN npm i
+ADD knexfile.js knexfile.js
+ADD config config
+ADD priv priv
+ADD src src
+
+CMD ["node", "src/index.js"]
