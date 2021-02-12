@@ -5,9 +5,6 @@ const ping = require("@wdalmut/ping")();
 const bodyParser = require('body-parser')
 const actions = require('./controllers')
 const error_handler = require('./middleware/error-handler')
-const mongoose = require('mongoose')
-
-mongoose.connect(config.db.host, config.db.options)
 
 const app = express();
 

@@ -1,4 +1,4 @@
-const { compose, curry, assoc, length } = require('ramda')
+const { compose, curry, assoc, length, prop } = require('ramda')
 
 const append_headers = curry((res, params) => {
   return res
@@ -19,7 +19,18 @@ const create_filters = curry((params, results) => {
   )(results)
 })
 
+const headers = curry((res, header) => {
+  return res
+    .set('x-total', prop('x-total', header) || 1)
+    .set('x-page', prop('x-page', header) || 1)
+    .set('x-count', prop('x-count', header) || 1)
+    .set('x-limit', prop('x-limit', header) || 1)
+    .set('x-from', prop('x-from', header) || 1)
+    .set('x-to', prop('x-to', header) || 1)
+})
+
 module.exports = {
   append_headers,
   create_filters,
+  headers
 }

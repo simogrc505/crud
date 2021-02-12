@@ -1,8 +1,6 @@
-const mongoose = require('mongoose')
 const config = require('config')
 const data = require('../../priv/seeds/test/book')
 
-mongoose.connect(config.db.host, config.db.options)
 
 const mock = require('mock-require')
 

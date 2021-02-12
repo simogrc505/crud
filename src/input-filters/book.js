@@ -1,5 +1,7 @@
 const Joi = require('joi');
-const validator = require('express-joi-validation')({});
+const validator = require('express-joi-validation').createValidator({
+  passError: true,
+})
 
 module.exports = {
   validate_books_input: validator.query(Joi.object({

@@ -3,7 +3,7 @@ services:
   web:
     build: .
     ports:
-      - "3001:3000"
+      - "3060:3000"
     command: ./node_modules/.bin/nodemon
     volumes:
       - .:/data
