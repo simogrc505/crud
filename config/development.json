@@ -19,5 +19,5 @@
       "req.headers.authorization"
     ]
   },
-  "host_name": "http://balancer"
+  "host_name": "https://internal-user.universe.corley.it"
 }

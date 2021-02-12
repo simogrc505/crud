@@ -8,10 +8,8 @@ const view = require('../views/book')
 // AUTH
 const auth = require('@wdalmut/mini-auth')
 const forward = require('@wdalmut/forward-auth')
-const { if_one_of_allowed_roles } = require('../auth')
 
 const { create_filters, append_headers } = require('../utilities/pagination')
-const { if_domain } = require('../utilities/index')
 
 const list = (req, res) => {
   let params = compose(
@@ -37,7 +35,6 @@ const get = (req, res) => {
     .then(compose(bind(res.json, res), view.one))
     .catch(error.generic(res))
 }
-//non deve far bannare le email col proprio dominio  --> @corley.it
 const create = (req, res) => {
   return repo.create(req.body)
     .then(compose(bind(res.status(201).json, res), view.one))

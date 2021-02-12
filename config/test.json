@@ -19,5 +19,5 @@
       "req.headers.authorization"
     ]
   },
-  "host_name": "API_HOST_NAME"
+  "host_name": "https://internal-user.universe.corley.it"
 }
